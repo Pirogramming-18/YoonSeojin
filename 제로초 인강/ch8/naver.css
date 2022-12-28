@@ -1,22 +1,3 @@
-/*block format context 해당하는 4가지 경우 Inline block, float, overflow visible X */
-* {
-    box-sizing: border-box; /*border + padding + content로 width 짜기*/
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-    font-family: Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif;
-}
-
-.inline-block {
-    display: inline-block;
-}
-
-.float-left {
-    float: left;
-}
-
 #fixed {
     position: fixed;
     bottom: 50px;
@@ -28,13 +9,15 @@ html, body {
     border-radius: 50px;
 }
 
+/* Cascading Style Sheet */
+/* 선택자(selector) */
 .blind {
     position: absolute;
+    overflow: hidden;
     clip: rect(0 0 0 0);
+    margin: -1px;
     width: 1px;
     height: 1px;
-    margin: -1px;
-    overflow: hidden;
 }
 
 .relative {
@@ -45,6 +28,7 @@ html, body {
     margin: 0 auto;
     width: 1080px;
 }
+
 header {
     height: 170px;
 }
@@ -57,72 +41,70 @@ header {
 #header-top span {
     color: #888;
     letter-spacing: -1px;
-    font-size:  11px;
+    font-size: 11px;
     line-height: 22px;
-
 }
 
 #header-search {
-    clear:both;
-    padding-top: 20px;
+    clear: both;
+    padding-top: 45px;
 }
 
 #header-search a {
     text-decoration: none;
 }
 
-div#header-search h1 {
-    width: 222px;
-    height: 52px;
+#header-search h1 {
+    width: 198px;
+    height: 48px;
     display: inline-block;
-    background-size: 442px 428px;
-    background-image: url(./imageSprite.png);
-    background-position: 0 -158px;
-    background-repeat: no-repeat;
-    vertical-align: middle; 
+    /*background-image: url(./sp_search.png);*/
+    /*background-position: -4px -10px;*/
+    /*background-repeat: no-repeat;*/
+    background: url(./sp_search.png) -4px -4px no-repeat;
+    vertical-align: middle;
     position: relative;
     top: -5px;
     left: 1px;
 }
- 
+
 #header-search h1 span {
     display: none;
 }
 
 #header-search h2 {
-    display : none;
+    display: none;
 }
 
 #header-search fieldset {
     margin-left: 18px;
-    /* padding-left: 10px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-right: 0; */
-    padding: 12px 0 12px 10px;  /*위 아래 오른쪽 왼쪽*/
-    width: 582px;
-    height: 52px;
-    display: inline-block; 
-    border: 2px solid #03cf5d;
+    /*padding-top: 12px;*/
+    /*padding-bottom: 12px;*/
+    /*padding-left: 10px;*/
+    /*padding-right: 0;*/
+    padding: 12px 0 12px 10px;
+    width: 521px;
+    height: 49px;
+    display: inline-block;
+    border: 2px solid #03cf5d; /* hex */
     vertical-align: middle;
     position: relative;
 }
 
 #header-search fieldset input {
-    width: 444px;
-    height: 24px;
     border: none;
     padding: 0;
     outline: none;
     vertical-align: top;
+    width: 395px;
+    height: 23px;
 }
- 
+
 #header-search fieldset button {
-    width: 52px;
-    height: 52px;
+    width: 49px;
+    height: 49px;
     border: none;
     padding: 0;
-    display: inline-block;
     background: #03cf5d;
     position: absolute;
     right: -2px;
@@ -130,7 +112,7 @@ div#header-search h1 {
 }
 
 #search-keyboard {
-    background-image: url(./sp_search.png);
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
     background-repeat: no-repeat;
     background-position: -33px -60px;
     width: 19px;
@@ -141,7 +123,7 @@ div#header-search h1 {
 }
 
 #search-history {
-    background-image: url(./sp_search.png);
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
     background-repeat: no-repeat;
     background-position: -87px -60px;
     width: 9px;
@@ -152,19 +134,14 @@ div#header-search h1 {
 }
 
 #search-image {
+    background-image: url(./sp_search.png);
+    background-position: -3px -60px;
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 21px;
     display: inline-block;
-    width: 22px;
-    height: 22px;
-    background-size: 442px 428px;
-    background-position: -420px -24px;
-    background-image: url(./imageSprite.png);
-    margin: 10px;
+    margin: 14px;
 }
-/* #header-search fieldset button span {
-    width: 22px;
-    height: 22px;
-    background-size: 442px 428px;
-} */
 
 nav {
     height: 46px;
@@ -183,43 +160,50 @@ nav ul {
     display: inline-block;
 }
 
+#nav-menu li:first-child span:first-child {
+    width: 25px;
+    background-position: 0 -285px;
+    margin-left: 0;
+}
+
 #nav-menu li span:first-child {
     height: 16px;
     display: inline-block;
-    background-image: url(./sp_nav.png);
+    background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
     background-repeat: no-repeat;
-    margin-left: 14px;
+    margin-left: 10px;
 }
 
-#nav-menu li:first-child span:first-child {
-    width: 25px;
-    background-position: 0-285px;
-    margin-left: 0;
-}
 #nav-menu li:nth-child(2) span:first-child {
     width: 27px;
     background-position: -279px -52px;
 }
+
 #nav-menu li:nth-child(3) span:first-child {
     width: 40px;
     background-position: -100px -182px;
 }
+
 #nav-menu li:nth-child(4) span:first-child {
     width: 40px;
     background-position: -101px -156px;
 }
+
 #nav-menu li:nth-child(5) span:first-child {
     width: 26px;
     background-position: -279px -156px;
 }
+
 #nav-menu li:nth-child(6) span:first-child {
     width: 25px;
     background-position: -70px -285px;
 }
+
 #nav-menu li:nth-child(7) span:first-child {
     width: 35px;
     background-position: -125px -130px;
 }
+
 #nav-menu li:nth-child(8) span:first-child {
     width: 26px;
     background-position: -279px -208px;
@@ -254,6 +238,7 @@ nav ul {
     width: 26px;
     background-position: -72px -259px;
 }
+
 #nav-menu li:nth-child(15) span:first-child {
     width: 13px;
     background-position: -140px -78px;
@@ -280,19 +265,15 @@ nav ul {
 #search-ranking {
     position: absolute;
     top: 14px;
-    right: 0px;
+    right: 0;
     width: 198px;
     height: 20px;
-}
-
-#search-ranking:hover ul{
-    display: inline-block;
 }
 
 #search-ranking ul {
     display: none;
     list-style: none;
-    padding: 17px ;
+    padding: 17px;
     margin: 0;
     width: 332px;
     height: 334px;
@@ -301,10 +282,29 @@ nav ul {
     position: absolute;
     top: -15px;
     right: 0;
-
+    z-index: 100;
 }
 
-/*z-index는 형제끼리! 자손이 부모보다 zIndex가 높더라도 부모 형제들끼리 비교했을 때 낮으면 숨겨짐*/
+#z-example {
+    position: absolute;
+    background: yellow;
+    width: 100px;
+    height: 100px;
+    z-index: 1;
+}
+
+#z-inner {
+    position: absolute;
+    background: red;
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+}
+
+#search-ranking:hover ul {
+    display: inline-block;
+}
+
 #rank-number {
     margin-top: -9px;
     color: #00ab33;
@@ -315,7 +315,7 @@ nav ul {
     letter-spacing: -1px;
     font-size: 14px;
 }
- /*Float인 자식을 인식하려면 부모를 inline block으로 형성해두면 됨*/
+
 main {
     background-color: #f2f4f7;
     display: inline-block;
@@ -401,12 +401,20 @@ main {
     vertical-align: top;
 }
 
+#main-ytn h3, #main-newsstand h3 {
+    font-size: 14px;
+    font-family: NanumSquare,Dotum,"돋움",Helvetica,AppleSDGothicNeo,sans-serif;
+    padding-top: 15px;
+    padding-left: 15px;
+    vertical-align: top;
+}
+
 #main-ytn {
     display: inline-block;
     width: 740px;
     height: 46px;
     background-color: white;
-    margin-right: 8px;
+    margin-bottom: 8px;
 }
 
 #main-ytn h3,
@@ -430,7 +438,7 @@ main {
 
 #main-newsstand ul {
     display: inline-block;
-    margin: -22px;
+    margin: 0;
     padding: 0;
     list-style: none;
 }
@@ -470,7 +478,7 @@ main {
 #main-category {
     float: left;
     width: 740px;
-    height: 882px;
+    height: 884px;
     background: white;
     margin-bottom: 8px;
     margin-right: 8px;
@@ -479,7 +487,7 @@ main {
 #main-shopping {
     float: left;
     width: 330px;
-    height: 882px;
+    height: 884px;
     background: white;
     margin-bottom: 8px;
 }
@@ -487,6 +495,10 @@ main {
 #main-shopping iframe {
     width: 100%;
     height: 100%;
+    border: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 #main-third-block,
@@ -507,7 +519,7 @@ main {
 
 #main-third-ad {
     float: left;
-    width: 332px;
+    width: 330px;
     height: 130px;
     background: #555;
 }
@@ -518,10 +530,10 @@ main {
     border-bottom: 1px solid #ebeef3;
 }
 
-#subject-list, #subject-all, #subject-prev, #subject-next{
-    float: left; 
+#subject-list, #subject-all, #subject-prev, #subject-next {
+    float: left;
     height: 45px;
-    padding: 0;   
+    padding: 0;
 }
 
 #subject-list {
@@ -566,7 +578,6 @@ main {
     top: 0;
     height: 45px;
     width: 15px;
-
 }
 
 #subject-list li.highlight {
@@ -576,15 +587,19 @@ main {
     height: 45px;
 }
 
+#subject-all {
+    border-right: 1px solid #ebeef3;
+}
+
 #subject-all, #subject-prev, #subject-next {
     position: relative;
     width: 45px;
-    background: white;
     border: none;
     border-left: 1px solid #ebeef3;
+    background: white;
 }
 
-#subject-all span:last-child{
+#subject-all span:last-child {
     position: absolute;
     top: 15px;
     left: 12px;
@@ -595,24 +610,28 @@ main {
     background-position: -218px -257px;
 }
 
-#subject-prev span:last-child{
+#subject-prev span:last-child {
     position: absolute;
     top: 15px;
-    left: 12px;
-    width: 20px;
-    height: 14px;
+    left: 16px;
+    width: 8px;
+    height: 16px;
     background-image: url(./sp_themecast.png);
     background-repeat: no-repeat;
     background-position: -320px 0;
 }
 
-#subject-next span:last-child{
+#subject-next span:last-child {
     position: absolute;
     top: 15px;
-    left: 12px;
-    width: 20px;
-    height: 14px;
+    left: 16px;
+    width: 8px;
+    height: 16px;
     background-image: url(./sp_themecast.png);
     background-repeat: no-repeat;
     background-position: -320px -52px;
+}
+
+section {
+    border: 1px solid #dee3eb;
 }
