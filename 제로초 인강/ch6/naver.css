@@ -289,7 +289,7 @@ nav li.more:first-child span:first-child {
     letter-spacing: -1px;
     font-size: 14px;
 }
-
+ /*Float인 자식을 인식하려면 부모를 inline block으로 형성해두면 됨*/
 main {
     background-color: #f2f4f7;
     display: inline-block;
