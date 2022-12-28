@@ -1,3 +1,4 @@
+/*block format context 해당하는 4가지 경우 Inline block, float, overflow visible X */
 * {
     box-sizing: border-box; /*border + padding + content로 width 짜기*/
 }
