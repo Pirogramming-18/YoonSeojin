@@ -3,6 +3,12 @@
     box-sizing: border-box; /*border + padding + content로 width 짜기*/
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+
 .blind {
     position: absolute;
     clip: rect(0 0 0 0);
@@ -12,13 +18,21 @@
     overflow: hidden;
 }
 
-div#header-center {
+.relative {
+    position: relative;
+}
+
+.center-align {
     margin: 0 auto;
     width: 1080px;
+}
+header {
+    height: 170px;
 }
 
 #header-top {
     float: right;
+    margin-top: 8px;
 }
 
 #header-top span {
@@ -29,9 +43,13 @@ div#header-center {
 
 }
 
+#header-search {
+    clear:both;
+    padding-top: 20px;
+}
+
 #header-search a {
     text-decoration: none;
-    clear: both;
 }
 
 div#header-search h1 {
@@ -44,7 +62,8 @@ div#header-search h1 {
     background-repeat: no-repeat;
     vertical-align: middle; 
     position: relative;
-    top: -6px;
+    top: -5px;
+    left: 1px;
 }
  
 #header-search h1 span {
@@ -56,7 +75,7 @@ div#header-search h1 {
 }
 
 #header-search fieldset {
-    margin-left: 20px;
+    margin-left: 18px;
     /* padding-left: 10px;
     padding-top: 12px;
     padding-bottom: 12px;
@@ -98,6 +117,7 @@ div#header-search h1 {
     background-size: 442px 428px;
     background-position: -420px -24px;
     background-image: url(./imageSprite.png);
+    margin: 10px;
 }
 /* #header-search fieldset button span {
     width: 22px;
@@ -105,9 +125,16 @@ div#header-search h1 {
     background-size: 442px 428px;
 } */
 
+nav {
+    height: 46px;
+    border-top: 1px solid #f1f3f6;
+    border-bottom: 1px solid #d1d8e4;
+}
+
 nav ul {
+    display: inline-block;
     margin: 0;
-    padding: 0;
+    padding: 16px 0 0 4px;
     list-style: none;
 }
 
@@ -147,4 +174,24 @@ nav li:nth-child(5) span:first-child {
 nav li:nth-child(6) span:first-child {
     width: 25px;
     background-position: -70px -285px;
+}
+
+.nav-divider {
+    display: inline-block;
+    margin: 18px 16px 0;
+    width: 1px;
+    height: 14px;
+    background: #ebeef3;
+}
+
+#search-ranking {
+    position: absolute;
+    top: 16px;
+    right: 10 0px;
+}
+
+#rank-number {
+    margin-top: -9px;
+    color: #00ab33;
+    font-size: 16px;
 }
