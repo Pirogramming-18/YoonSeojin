@@ -1,0 +1,21 @@
+@import './reset.css';
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+.start, .intro {
+    height: 100%;
+}
+
+.divide-line {
+    border: solid 0.5px gray;
+    width: 80%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.get-start-btn {
+    background-color: blue
+}
