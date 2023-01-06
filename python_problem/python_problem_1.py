@@ -10,3 +10,6 @@ while True:
             continue
     except ValueError as e:
         print('정수를 입력하세요')
+
+for i in range(num+1, playN+1):
+    print('playerA : {}'.format(i))
