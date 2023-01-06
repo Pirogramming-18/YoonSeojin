@@ -19,6 +19,7 @@ while gamePlay:
         num += 1 
         if num == 31:
             gamePlay = False
+            print('palyerB win!')
             break
 
     #playerB
@@ -38,4 +39,5 @@ while gamePlay:
         num += 1
         if num == 31:
             gamePlay = False
+            print(print('palyerA win!'))
             break
