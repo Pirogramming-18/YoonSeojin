@@ -8,5 +8,8 @@ from . import views
 #name은 url에 이름을 붙인 것으로 뷰를 식별
 urlpatterns = [
     path('', views.post_list, name = 'post_list'),
+    #post/int:pk는 Url 패턴을 나타낸다
+    #장고는 int값을 기대하고, 이를 Pk라는 변수로 뷰에 전송
+    path('post/<int:pk>/', views.post_detail, name='post_detail'),
 ]
 
