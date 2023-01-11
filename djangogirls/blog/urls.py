@@ -11,5 +11,6 @@ urlpatterns = [
     #post/int:pk는 Url 패턴을 나타낸다
     #장고는 int값을 기대하고, 이를 Pk라는 변수로 뷰에 전송
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
+    path('post/new/', views.post_new, name='post_new'),path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
 ]
 
