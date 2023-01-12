@@ -13,7 +13,6 @@ def movie_detail(request:HttpRequest, pk, *args, **kwargs):
     movie = MovieDetail.objects.all().get(id=pk)
     return render(request, "movieReview/movie_detail.html", {'movie':movie})
 
-
 def movie_create(request: HttpRequest, *args, **kwargs):
     if request.method == "POST":
         MovieDetail.objects.create(
@@ -27,3 +26,18 @@ def movie_create(request: HttpRequest, *args, **kwargs):
         )
         return redirect("/")
     return render(request, 'movieReview/movie_create.html')
+
+def movie_update(request: HttpRequest, pk, *args, **kwargs) :
+    movie = MovieDetail.objects.get(id=pk)
+    if request.method == "POST":
+        movie.title = request.POST["title"]
+        movie.director = request.POST["director"]
+        movie.cast = request.POST["cast"]
+        movie.genre = request.POST["genre"]
+        movie.star = request.POST["star"]
+        movie.runtime = request.POST["runtime"]
+        movie.review = request.POST["review"]
+        movie.save()
+        return redirect(f"/movies/{movie.id}")
+    
+    return render(request, "movieReview/movie_update.html", {"movie": movie})
