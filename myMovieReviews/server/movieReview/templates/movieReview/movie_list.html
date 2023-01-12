@@ -11,11 +11,14 @@
         </header>
         
         <hr>
+
         <main>
-            <div>스파이더맨</div>
-            <div>프렌치</div>
-            <div>메트릭스</div>
-            <div>킹스맨</div>
+            {% for movie in movies %}
+            <p><a href="">{{ movie.title }}</a></p>
+            <small>개봉년도: {{ movie.released }}</small>
+            <small>장르: {{ movie.genre }}</small>
+            <small>별점: {{ movie.star }}</small>
+            {% endfor %}
         </main>
 
     </body>
