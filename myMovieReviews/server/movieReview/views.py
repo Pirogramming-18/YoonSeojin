@@ -10,7 +10,6 @@ def movie_list(request) :
     return render(request, 'movieReview/movie_list.html', {"movies": movies})
 
 def movie_detail(request:HttpRequest, pk, *args, **kwargs):
-    pk = pk-3
     movie = MovieDetail.objects.all().get(id=pk)
     return render(request, "movieReview/movie_detail.html", {'movie':movie})
 

@@ -14,7 +14,7 @@
 
         <main>
             {% for movie in movies %}
-            <p><a href="">{{ movie.title }}</a></p>
+            <p><a href="/movies/{{ movie.pk }}">{{ movie.title }}</a></p>
             <small>개봉년도: {{ movie.released }}</small>
             <small>장르: {{ movie.genre }}</small>
             <small>별점: {{ movie.star }}</small>
