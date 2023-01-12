@@ -1,6 +1,6 @@
 <h1><a href="/">Movie Review🍿</a></h1>
 <hr>
-<form action="/movies/create">
+<form action="/movies/create" method="post">
     {% csrf_token %}
     <div>제목: <input type="text" name="title" placeholder="영화 제목"></div>
     <br>
