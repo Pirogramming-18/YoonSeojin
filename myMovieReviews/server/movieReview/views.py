@@ -23,6 +23,7 @@ def movie_create(request: HttpRequest, *args, **kwargs):
             star=request.POST["star"],
             runtime=request.POST["runtime"],
             review=request.POST["review"],
+            released = request.POST["released"],
         )
         return redirect("/")
     return render(request, 'movieReview/movie_create.html')
@@ -41,3 +42,9 @@ def movie_update(request: HttpRequest, pk, *args, **kwargs) :
         return redirect(f"/movies/{movie.id}")
     
     return render(request, "movieReview/movie_update.html", {"movie": movie})
+
+def movie_delete(request: HttpRequest, pk, *args, **kwargs):
+    if request.method == "POST":
+        movie = MovieReview.objects.get(id=pk)
+        movie.delete()
+    return redirect("/")
