@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-)b=-gicwlgs9d$i$^vy$)fsntj-p+ll@-srl%tme47dsexk34j"
+SECRET_KEY = "django-insecure-q+(dq1j5qwmzbqlrq=r42hw630&at6&^by^ofgkq2x*3)n_*6x"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -32,13 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'posts',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'posts',
 ]
 
 MIDDLEWARE = [
@@ -99,9 +98,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = "ko"
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "Asia/Seoul"
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -112,7 +111,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
